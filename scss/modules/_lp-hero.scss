@@ -1,0 +1,345 @@
+.lp-hero {
+  position: relative;
+  padding-bottom: 4rem;
+  padding-top: 0;
+
+  @include lg-up {
+    padding-bottom: 8rem;
+  }
+
+  &__visual {
+    position: relative;
+    border-radius: 0;
+    height: 456px;
+    background: var(--White);
+    margin: 0 auto 3.4rem;
+    width: 100%;
+
+    @include lg-up {
+      max-width: 1280px;
+      height: 457px;
+      border-radius: 0 0 27px 27px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 0;
+    overflow: hidden;
+
+    @include lg-up {
+      border-radius: 0 0 27px 27px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+
+      @include lg-up {
+        object-position: center;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+
+  &__badge {
+    position: absolute;
+    height: 34px;
+    padding: 0 1.4rem;
+    border-radius: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-family: var(--font-text);
+    font-weight: 600;
+    color: var(--Primary-dark, #0c1d4f);
+    white-space: nowrap;
+
+    &--gratis {
+      background-color: var(--White);
+      top: 85px;
+      right: 0;
+      left: auto;
+      transform: none;
+      margin-left: 0;
+      border-radius: 32px 0 0 32px;
+
+      @include lg-up {
+        border-radius: 32px;
+        top: 152px;
+        left: 20%;
+        right: auto;
+        transform: translateX(-50%);
+        padding: 0 2.4rem 0 1.4rem;
+      }
+    }
+
+    &--night {
+      background-color: var(--Yellow, #f9f95a);
+      top: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 10px;
+
+      @include lg-up {
+        top: 311px;
+        left: 36%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__offer-card {
+    position: absolute;
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 4rem);
+    max-width: 334px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    background: rgba(254, 254, 254, 0.48);
+    background-blend-mode: screen;
+    box-shadow:
+      4px 4px 8px rgba(0, 0, 0, 0.16),
+      inset 0px 0px 22px rgba(224, 224, 224, 0.5),
+      inset 0px 0px 0px 1px #999999,
+      inset 2px 2px 1px -2px #b3b3b3,
+      inset -2px -2px 1px -2px #b3b3b3,
+      inset 3px 3px 0px -3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    z-index: 4;
+
+    color: var(--Black);
+    z-index: 10;
+
+    .lp-hero__discount {
+      position: absolute;
+      top: -30px;
+      left: -50px;
+      width: 140px;
+      z-index: 15;
+      pointer-events: none;
+
+      @include lg-up {
+        width: 198px;
+        top: -60px;
+        left: -80px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+
+    p {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.2;
+      font-family: var(--font-text);
+    }
+
+    .lp-hero__offer-name {
+      color: var(--Primary-4, #0079f1);
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    .lp-hero__offer-date {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    @include lg-up {
+      width: 400px;
+      max-width: 400px;
+      left: auto;
+      right: 2rem;
+      top: 136px;
+      bottom: auto;
+      transform: none;
+      padding: 1.2rem;
+      border-radius: 24px;
+
+      @supports (backdrop-filter: blur(12px)) {
+        backdrop-filter: blur(12px);
+      }
+
+      p {
+        font-size: 2.16rem;
+      }
+
+      .lp-hero__offer-name {
+        font-size: 2.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .lp-hero__offer-date {
+        font-size: 2.16rem;
+      }
+    }
+  }
+
+  &__partners-bar {
+    &.desktop-only {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1280px;
+      height: 85px;
+      background: rgba(255, 255, 255, 0.69);
+      backdrop-filter: blur(6.85px);
+      border-radius: 0 0 27px 27px;
+      z-index: 5;
+      display: none;
+
+      @include lg-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lp-hero__partners-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      .bekannt-aus {
+        font-family: var(--font-text);
+        color: var(--Black);
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.6rem;
+      }
+
+      .lp-hero__partners-img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &.mobile-only {
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+
+      @include lg-up {
+        display: none;
+      }
+
+      .bekannt-aus {
+        font-family: var(--font-text);
+        color: var(--Black);
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.6rem;
+      }
+
+      .lp-hero__partners-img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__text-section {
+    margin-top: 4rem;
+    text-align: center;
+
+    @include lg-up {
+      margin-top: 8rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-family: var(--font-titles);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--Black);
+    margin-bottom: 3rem;
+
+    span {
+      font-style: italic;
+    }
+
+    @include lg-up {
+      font-size: 2.88rem;
+    }
+  }
+
+  &__summary-card {
+    background: #f7f7f7;
+    border-radius: 20px;
+    padding: 3.2rem 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @include lg-up {
+      border-radius: 24px;
+      padding: 3.8rem;
+    }
+
+    p {
+      font-family: var(--font-text);
+      font-size: 1.8rem;
+      line-height: 1.4;
+      color: var(--Black);
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+  .desktop-only {
+    display: none;
+    @include lg-up {
+      display: flex !important;
+    }
+  }
+}

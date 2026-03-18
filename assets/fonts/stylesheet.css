@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Ekamai';
+    src: url('Ekamai.eot');
+    src: local('Ekamai'),
+        url('Ekamai.eot?#iefix') format('embedded-opentype'),
+        url('Ekamai.woff2') format('woff2'),
+        url('Ekamai.woff') format('woff'),
+        url('Ekamai.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
