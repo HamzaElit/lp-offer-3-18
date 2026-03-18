@@ -14,12 +14,11 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: center; // Center on mobile
-    
+    justify-content: center;
     @include lg-up {
       max-width: 1280px;
-      justify-content: flex-end; // Right on desktop
-      padding-right: 2.4rem;
+      justify-content: flex-end;
+      padding-right: 5.4rem;
     }
   }
 

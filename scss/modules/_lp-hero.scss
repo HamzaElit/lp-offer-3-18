@@ -181,7 +181,7 @@
       width: 400px;
       max-width: 400px;
       left: auto;
-      right: 2rem;
+      right: 5rem;
       top: 136px;
       bottom: auto;
       transform: none;
@@ -251,8 +251,7 @@
     }
 
     &.mobile-only {
-      margin-top: 5rem;
-      margin-bottom: 3rem;
+      margin: 3rem 0;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -279,7 +278,7 @@
   }
 
   &__text-section {
-    margin-top: 4rem;
+    margin-top: 6rem;
     text-align: center;
 
     @include lg-up {
