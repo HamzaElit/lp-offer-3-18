@@ -68,7 +68,7 @@
 
     &--gratis {
       background-color: var(--White);
-      top: 85px;
+      top: 140px;
       right: 0;
       left: auto;
       transform: none;
@@ -87,7 +87,7 @@
 
     &--night {
       background-color: var(--Yellow, #f9f95a);
-      top: 250px;
+      top: 300px;
       left: 50%;
       transform: translateX(-50%);
       margin-left: 10px;
@@ -136,7 +136,7 @@
 
     .lp-hero__discount {
       position: absolute;
-      top: -30px;
+      top: -85px;
       left: -50px;
       width: 140px;
       z-index: 15;
