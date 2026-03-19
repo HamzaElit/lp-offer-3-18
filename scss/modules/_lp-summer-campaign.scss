@@ -1,0 +1,295 @@
+.lp-summer-campaign {
+  position: relative;
+  background: linear-gradient(135deg, #1bb3ff 0%, #43ffec 100%);
+  padding: 6.2rem 0 3.6rem;
+  overflow: hidden;
+
+  &__bg-text {
+    position: absolute;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 445px;
+    max-width: 100%;
+    z-index: 1;
+    opacity: 0.15;
+    pointer-events: none;
+
+    @include lg-up {
+      width: 890px;
+      top: 5rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__person {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 450px;
+    height: 80%;
+    pointer-events: none;
+
+    @include lg-up {
+      left: auto;
+      right: 0;
+      transform: none;
+      max-width: 805px;
+      width: 60%;
+      height: 95%; // Restrict height to prevent scaling too huge
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: bottom center;
+
+      @include lg-up {
+        object-position: bottom right;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      line-height: 1;
+    }
+
+    .line-1,
+    .line-3 {
+      color: var(--White);
+      font-family: var(--font-titles);
+      font-weight: 900;
+      font-size: 3.9rem;
+      letter-spacing: -1.17px;
+    }
+    .line-2 {
+      color: var(--Yellow, #f9f95a);
+      font-family: var(--font-accent);
+      font-size: 6.7rem;
+      line-height: 0.8;
+    }
+
+    @include lg-up {
+      margin-bottom: 3.6rem;
+    }
+  }
+
+  &__price-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4.8rem;
+  }
+
+  &__price-new {
+    color: var(--White);
+    font-family: var(--font-titles);
+    font-weight: 900;
+    font-size: 8rem;
+    letter-spacing: -3px;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+
+    @include lg-up {
+      font-size: 10.3rem;
+      letter-spacing: -6.2px;
+    }
+  }
+
+  &__price-old {
+    background: #f95a5a;
+    color: var(--White);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 2.16rem;
+    padding: 0.3rem 2.8rem;
+    border-radius: 3.8rem;
+    text-decoration: line-through;
+    margin-top: 1rem;
+    height: 40.8px;
+    @include lg-up {
+      margin-top: 1.4rem;
+    }
+  }
+
+  &__faq-box {
+    position: relative;
+    border-radius: 20px;
+    padding: 2.7rem 2.1rem;
+    width: 100%;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 3rem;
+    z-index: 10;
+
+    .faq-box-title {
+      font-family: var(--font-text);
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: var(--Black);
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__faq-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(249, 249, 90, 0.85); // Increased opacity slightly
+    border-radius: 20px;
+    z-index: -1;
+
+    @supports (backdrop-filter: blur(10px)) {
+      background: rgba(249, 249, 90, 0.4);
+      backdrop-filter: blur(6px);
+    }
+  }
+
+  // ACCORDION OVERRIDES
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .accordion__item {
+      border-bottom: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+
+      .accordion__quesion {
+        background: rgba(255, 255, 255, 0.94);
+        padding: 1.2rem 2.4rem;
+        border-radius: 30px;
+
+        @include lg-up {
+          padding: 1.2rem 3.7rem;
+        }
+
+        .user-profile {
+          font-family: var(--font-text);
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #0b0b0b;
+          padding-right: 3rem;
+
+          @include md-up {
+            font-size: 1.6rem;
+          }
+
+          .icon {
+            display: none;
+          }
+        }
+      }
+
+      &[open] {
+        background: transparent;
+
+        .accordion__quesion {
+          border-radius: 20px 20px 0 0;
+        }
+
+        .accordion__answer {
+          background: rgba(255, 255, 255, 0.94);
+          border-radius: 0 0 20px 20px;
+          padding: 1.2rem 2.4rem 2.4rem;
+          margin-top: 0px;
+
+          p,
+          strong {
+            font-size: 1.4rem;
+            color: #0b0b0b;
+            line-height: 1.4;
+
+            @include md-up {
+              font-size: 1.6rem;
+            }
+          }
+
+          p {
+            margin-bottom: 1rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 10;
+  }
+
+  &__cta {
+    background: var(--Yellow, #f9f95a);
+    color: var(--Primary-dark, #0e184b);
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: 1.4rem 4.8rem;
+    border-radius: 41px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--Yellow, #f9f95a);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+
+    &:hover {
+      background: var(--White);
+      color: var(--Primary-dark, #0e184b);
+    }
+  }
+
+  &__cta-subtext {
+    font-family: var(--font-text);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--White);
+    margin: 0;
+
+    @include lg-up {
+      color: var(--Primary-dark, #0e184b);
+    }
+  }
+}

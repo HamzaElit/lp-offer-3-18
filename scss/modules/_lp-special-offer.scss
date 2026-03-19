@@ -1,0 +1,169 @@
+.lp-special-offer {
+  position: relative;
+  background: linear-gradient(180deg, #1bb3ff 0%, #43ffec 65.23%, #ffffff 100%);
+  padding: 6.8rem 0 3.6rem;
+  overflow: hidden;
+  .container {
+    max-width: 80rem;
+  }
+  &__bg-text {
+    position: absolute;
+    top: 2.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 445px;
+    z-index: 1;
+    opacity: 0.1;
+
+    @include lg-up {
+      width: 712px;
+      top: -1.7rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__badge {
+    width: 113px;
+    height: 113px;
+    margin-bottom: 2.4rem;
+
+    @include lg-up {
+      margin-bottom: 3.7rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 1.5rem;
+    margin-bottom: 5.6rem;
+    width: 100%;
+    max-width: 363px;
+
+    @include md-up {
+      max-width: 800px;
+    }
+
+    @include lg-up {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.6rem;
+      margin-bottom: 3.7rem;
+      max-width: none;
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 3px 4px 11.8px 0px rgba(0, 0, 0, 0.09);
+    border-radius: 20px;
+    padding: 2.8rem 1rem;
+    width: 100%;
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2.4rem;
+
+    @include lg-up {
+      width: 187px;
+      padding: 2.8rem 2rem;
+    }
+
+    p {
+      color: var(--Primary-dark, #0e184b);
+      font-size: 1.6rem;
+      font-family: var(--font-text);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0;
+
+      @include lg-up {
+        font-size: 1.8rem;
+      }
+    }
+
+    &-icon {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    &--discount {
+      gap: 1.8rem;
+      padding: 2.8rem 0.5rem; // Allows wide text slightly better spacing
+
+      @include lg-up {
+        padding: 2.8rem 1.5rem;
+      }
+
+      .lp-special-offer__card-value {
+        color: var(--Primary-4, #0079f1);
+        font-family: var(--font-titles);
+        font-size: 2.8rem;
+        font-weight: 900;
+        letter-spacing: -0.84px;
+        margin: 0;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    @include lg-up {
+      gap: 2.2rem;
+    }
+
+    &-label {
+      color: var(--Primary-dark, #0e184b);
+      font-family: var(--font-text);
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    &-price {
+      color: var(--Primary-4, #0079f1);
+      font-family: var(--font-accent);
+      font-size: 7.9rem;
+      line-height: 0.8;
+      margin: 0;
+      height: 48px; // Gives some room
+      display: flex;
+      align-items: center;
+
+      @include lg-up {
+        height: 60px;
+      }
+    }
+  }
+}

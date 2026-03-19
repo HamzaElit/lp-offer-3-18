@@ -4,14 +4,11 @@ trigger: always_on
 
 ---
 
-
-
 ## Figma MCP usage
 
 - When user provides any Figma link, always use Figma MCP first to extract layout, spacing, typography, and design tokens.
 - Do not copy Figma literally; adapt to project conventions and existing tokens/utilities.
 - If a needed color token is missing, add it to `scss/variables-site/_variables-site.scss` before using it.
-
 
 ## SCSS standards
 
@@ -20,7 +17,6 @@ trigger: always_on
 - Prefer CSS variables from `scss/variables-site/_variables-site.scss` for colors, spacing, radii, and typography values.
 - Reuse helpers from `scss/helpers/_helpers.scss`; if a utility is repeatedly needed and does not exist, add a general helper class there.
 - Do not redefine heading/body font sizes if already defined in `scss/variables-site/_variables-site.scss` typography tokens; reuse existing typography tokens/styles.
-
 
 ## Typography & Fonts
 
@@ -43,15 +39,15 @@ trigger: always_on
 
 ```html
 <section class="section-name">
-	<div class="section-name__container container">
-		<header class="section-name__header">
-			<h2 class="section-name__title">Title</h2>
-			<p class="section-name__subtitle">Subtitle</p>
-		</header>
-		<div class="section-name__content">
-			<!-- Content -->
-		</div>
-	</div>
+  <div class="section-name__container container">
+    <header class="section-name__header">
+      <h2 class="section-name__title">Title</h2>
+      <p class="section-name__subtitle">Subtitle</p>
+    </header>
+    <div class="section-name__content">
+      <!-- Content -->
+    </div>
+  </div>
 </section>
 ```
 
@@ -59,40 +55,40 @@ trigger: always_on
 
 ```scss
 .section-name {
-	&__container {
-		display: grid;
-		gap: var(--inner-spacing);
-	}
+  &__container {
+    display: grid;
+    gap: var(--inner-spacing);
+  }
 
-	&__header {
-		display: grid;
-		gap: 1.2rem;
-	}
+  &__header {
+    display: grid;
+    gap: 1.2rem;
+  }
 
-	// Do not redefine heading sizes if already provided in typography tokens.
-	&__title {
-		color: var(--Deep-Blue);
-	}
+  // Do not redefine heading sizes if already provided in typography tokens.
+  &__title {
+    color: var(--Deep-Blue);
+  }
 
-	&__content {
-		display: grid;
-		gap: 2rem;
-	}
+  &__content {
+    display: grid;
+    gap: 2rem;
+  }
 
-	&.layout-2 {
-		.section-name__container {
-			@include md-up {
-				grid-template-columns: 1fr 1fr;
-			}
-		}
-	}
+  &.layout-2 {
+    .section-name__container {
+      @include md-up {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
 
-	&.layout-3 {
-		.section-name__container {
-			@include lg-up {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
-	}
+  &.layout-3 {
+    .section-name__container {
+      @include lg-up {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
 }
 ```
